@@ -1,0 +1,68 @@
+{
+  "dataset_name": "Akram et al. (2023) UK University Student Mental Health",
+  "random_state": 42,
+  "total_raw_participants": 1408,
+  "pq16": {
+    "total_samples": 1391,
+    "features": [
+      "q_1",
+      "q_2",
+      "q_3",
+      "q_4",
+      "q_5",
+      "q_6",
+      "q_7",
+      "q_8",
+      "q_9",
+      "q_10",
+      "q_11",
+      "q_12",
+      "q_13",
+      "q_14",
+      "q_15",
+      "q_16"
+    ],
+    "train_samples": 1112,
+    "test_samples": 279,
+    "train_class_distribution": {
+      "0": 783,
+      "1": 329
+    },
+    "test_class_distribution": {
+      "0": 197,
+      "1": 82
+    },
+    "target_definition": "Prodromal Psychosis Risk (Cutoff >= 6 items endorsed, Ising et al. 2012)"
+  },
+  "mdq": {
+    "total_samples": 1304,
+    "features": [
+      "q_1",
+      "q_2",
+      "q_3",
+      "q_4",
+      "q_5",
+      "q_6",
+      "q_7",
+      "q_8",
+      "q_9",
+      "q_10",
+      "q_11",
+      "q_12",
+      "q_13",
+      "q_14",
+      "q_15"
+    ],
+    "train_samples": 1043,
+    "test_samples": 261,
+    "train_class_distribution": {
+      "0": 915,
+      "1": 128
+    },
+    "test_class_distribution": {
+      "0": 229,
+      "1": 32
+    },
+    "target_definition": "Bipolar Spectrum Disorder Risk (Hirschfeld et al. 2000 3-tier criteria)"
+  }
+}

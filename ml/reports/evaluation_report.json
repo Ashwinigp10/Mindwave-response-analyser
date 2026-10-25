@@ -1,0 +1,149 @@
+{
+  "model_version": "1.0.0-rf-mindwave",
+  "evaluation_timestamp": "2026-10-25T15:59:10.141039Z",
+  "schizophrenia_pq16": {
+    "model_name": "schizophrenia_pq16",
+    "algorithm": "RandomForestClassifier",
+    "random_seed": 42,
+    "n_estimators": 150,
+    "max_depth": 6,
+    "class_weight": "balanced",
+    "train_samples": 1112,
+    "test_samples": 279,
+    "train_positive_count": 329,
+    "test_positive_count": 82,
+    "cv_5fold_macro_f1_mean": 0.9230384700038764,
+    "cv_5fold_macro_f1_std": 0.02267379572066177,
+    "test_accuracy": 0.974910394265233,
+    "test_roc_auc": 0.9958524204531385,
+    "test_macro_f1": 0.9702925115224899,
+    "test_macro_precision": 0.9629130747126436,
+    "test_macro_recall": 0.9786740126284512,
+    "test_positive_f1": 0.9585798816568047,
+    "test_positive_precision": 0.9310344827586207,
+    "test_positive_recall": 0.9878048780487805,
+    "confusion_matrix": {
+      "true_negatives": 191,
+      "false_positives": 6,
+      "false_negatives": 1,
+      "true_positives": 81
+    },
+    "classification_report": {
+      "Low_Risk": {
+        "precision": 0.9947916666666666,
+        "recall": 0.9695431472081218,
+        "f1-score": 0.9820051413881749,
+        "support": 197.0
+      },
+      "Psychosis_Risk": {
+        "precision": 0.9310344827586207,
+        "recall": 0.9878048780487805,
+        "f1-score": 0.9585798816568047,
+        "support": 82.0
+      },
+      "accuracy": 0.974910394265233,
+      "macro avg": {
+        "precision": 0.9629130747126436,
+        "recall": 0.9786740126284512,
+        "f1-score": 0.9702925115224899,
+        "support": 279.0
+      },
+      "weighted avg": {
+        "precision": 0.9760529961273844,
+        "recall": 0.974910394265233,
+        "f1-score": 0.9751202980262667,
+        "support": 279.0
+      }
+    },
+    "feature_importances": {
+      "q_5": 0.15600138763667204,
+      "q_9": 0.1418019666443599,
+      "q_11": 0.11720072686367752,
+      "q_12": 0.11441677313217986,
+      "q_4": 0.10520149235142964,
+      "q_14": 0.07615732908546219,
+      "q_3": 0.06330061973242342,
+      "q_1": 0.06107846160906682,
+      "q_15": 0.04019377981520112,
+      "q_10": 0.026637212052063878,
+      "q_2": 0.02468821961632469,
+      "q_7": 0.023074346570095605,
+      "q_16": 0.016975785914286737,
+      "q_8": 0.015145427590381602,
+      "q_13": 0.009621233612574876,
+      "q_6": 0.008505237773800127
+    }
+  },
+  "bipolar_mdq": {
+    "model_name": "bipolar_mdq",
+    "algorithm": "RandomForestClassifier",
+    "random_seed": 42,
+    "n_estimators": 150,
+    "max_depth": 6,
+    "class_weight": "balanced",
+    "train_samples": 1043,
+    "test_samples": 261,
+    "train_positive_count": 128,
+    "test_positive_count": 32,
+    "cv_5fold_macro_f1_mean": 0.7550627748156631,
+    "cv_5fold_macro_f1_std": 0.025346272134075087,
+    "test_accuracy": 0.8467432950191571,
+    "test_roc_auc": 0.9327237991266375,
+    "test_macro_f1": 0.7563025210084033,
+    "test_macro_precision": 0.718810770381451,
+    "test_macro_recall": 0.8992221615720524,
+    "test_positive_f1": 0.6078431372549019,
+    "test_positive_precision": 0.44285714285714284,
+    "test_positive_recall": 0.96875,
+    "confusion_matrix": {
+      "true_negatives": 190,
+      "false_positives": 39,
+      "false_negatives": 1,
+      "true_positives": 31
+    },
+    "classification_report": {
+      "Low_Risk": {
+        "precision": 0.9947643979057592,
+        "recall": 0.8296943231441049,
+        "f1-score": 0.9047619047619048,
+        "support": 229.0
+      },
+      "Bipolar_Spectrum_Risk": {
+        "precision": 0.44285714285714284,
+        "recall": 0.96875,
+        "f1-score": 0.6078431372549019,
+        "support": 32.0
+      },
+      "accuracy": 0.8467432950191571,
+      "macro avg": {
+        "precision": 0.718810770381451,
+        "recall": 0.8992221615720524,
+        "f1-score": 0.7563025210084033,
+        "support": 261.0
+      },
+      "weighted avg": {
+        "precision": 0.9270976080147412,
+        "recall": 0.8467432950191571,
+        "f1-score": 0.8683580711978278,
+        "support": 261.0
+      }
+    },
+    "feature_importances": {
+      "q_15": 0.20557290328044703,
+      "q_11": 0.1343832805626967,
+      "q_4": 0.12092278230964233,
+      "q_14": 0.11690373860689678,
+      "q_12": 0.0918609018300999,
+      "q_1": 0.05287908234043123,
+      "q_2": 0.04935379183233799,
+      "q_8": 0.038505444891475685,
+      "q_13": 0.03843778161703687,
+      "q_7": 0.03787200633464207,
+      "q_10": 0.027341809813549837,
+      "q_9": 0.026892358195299063,
+      "q_3": 0.022030031376656233,
+      "q_5": 0.018806887696208245,
+      "q_6": 0.018237199312580027
+    }
+  }
+}
