@@ -2,8 +2,8 @@ import React from 'react';
 import { Sparkles, Brain, Cpu, AlertTriangle, CheckCircle2, ShieldAlert, Info, RotateCw, ExternalLink } from 'lucide-react';
 
 /**
- * Experimental ML Analysis Component
- * Displays Random Forest prediction telemetry separately from the traditional screening score.
+ * Supplemental Screening Analysis Component
+ * Displays response analysis results separately from the traditional screening score.
  */
 export default function ExperimentalMlSection({ mlResult, activeTest, score, maxScore, ageGroup, onRetry, isLoading }) {
   const isSchizophrenia = activeTest === 'schizophrenia';
@@ -23,8 +23,8 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
               <Cpu size={22} className="animate-spin" />
             </div>
             <div>
-              <h2 className="experimental-ml-title">Experimental ML Analysis</h2>
-              <p className="experimental-ml-subtitle">Querying Random Forest Inference Engine...</p>
+              <h2 className="experimental-ml-title">Screening Analysis</h2>
+              <p className="experimental-ml-subtitle">Retrieving your screening assessment...</p>
             </div>
           </div>
           <span className="experimental-ml-model-tag">
@@ -33,7 +33,7 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
         </div>
         <div style={{ textAlign: 'center', padding: '2rem 1rem', color: 'var(--color-text-muted)' }}>
           <p style={{ fontSize: '0.95rem', fontWeight: 500 }}>
-            Analyzing response telemetry through the trained scikit-learn Random Forest model...
+            Analyzing your questionnaire responses...
           </p>
         </div>
       </div>
@@ -42,7 +42,7 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
 
   // 2. Unsupported Age Group / Case
   if (mlResult?.status === 'unsupported' || mlResult?.is_supported === false) {
-    const reasonMessage = mlResult?.unsupported_reason || 'ML analysis is currently unavailable for this questionnaire or age group.';
+    const reasonMessage = mlResult?.unsupported_reason || 'Screening assessment is currently unavailable for this questionnaire or age group.';
     return (
       <div className="experimental-ml-card" id="experimental-ml-analysis">
         <div className="experimental-ml-topbar">
@@ -51,7 +51,7 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
               <Info size={22} />
             </div>
             <div>
-              <h2 className="experimental-ml-title">Experimental ML Analysis</h2>
+              <h2 className="experimental-ml-title">Screening Analysis</h2>
               <p className="experimental-ml-subtitle">Scientific Demographics Boundary Check</p>
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
         <div className="experimental-ml-fallback-box">
           <AlertTriangle size={32} style={{ color: '#F59E0B', margin: '0 auto 0.75rem auto' }} />
           <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text)', marginBottom: '0.4rem' }}>
-            ML analysis is currently unavailable for this questionnaire or age group.
+            Screening assessment is currently unavailable for this questionnaire or age group.
           </h4>
           <p style={{ fontSize: '0.88rem', maxWidth: '640px', margin: '0 auto 1rem auto', lineHeight: 1.5 }}>
             {reasonMessage}
@@ -86,8 +86,8 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
               <Cpu size={22} />
             </div>
             <div>
-              <h2 className="experimental-ml-title">Experimental ML Analysis</h2>
-              <p className="experimental-ml-subtitle">Python Random Forest Microservice</p>
+              <h2 className="experimental-ml-title">Screening Analysis</h2>
+              <p className="experimental-ml-subtitle">Screening Assessment Service</p>
             </div>
           </div>
           <span className="experimental-ml-model-tag" style={{ background: '#F1F5F9', color: '#64748B' }}>
@@ -98,7 +98,7 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
         <div className="experimental-ml-fallback-box">
           <Info size={32} style={{ color: 'var(--color-text-subtle)', margin: '0 auto 0.75rem auto' }} />
           <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text)', marginBottom: '0.4rem' }}>
-            ML analysis is currently unavailable for this questionnaire or age group.
+            Screening assessment is currently unavailable for this questionnaire or age group.
           </h4>
           <p style={{ fontSize: '0.85rem', maxWidth: '580px', margin: '0 auto 1rem auto' }}>
             The local FastAPI prediction service at <code>http://localhost:8000</code> is currently offline or unreachable. 
@@ -111,7 +111,7 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
               className="btn btn-secondary"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1.25rem', fontSize: '0.85rem' }}
             >
-              <RotateCw size={15} /> Recheck ML Service
+              <RotateCw size={15} /> Recheck Service
             </button>
           )}
         </div>
@@ -133,27 +133,27 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
             <Sparkles size={22} />
           </div>
           <div>
-            <h2 className="experimental-ml-title">Experimental ML Analysis</h2>
+            <h2 className="experimental-ml-title">Screening Analysis</h2>
             <p className="experimental-ml-subtitle">
-              Random Forest Telemetry for {testTitle}
+              Response Analysis for {testTitle}
             </p>
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
           <span className="experimental-ml-model-tag">
-            <Cpu size={13} /> {mlResult.algorithm || 'Random Forest'}
+            <Cpu size={13} /> Screening System
           </span>
           <span className="experimental-ml-model-tag" style={{ background: 'var(--color-bg)', border: '1px solid var(--color-border)', color: 'var(--color-text-muted)' }}>
-            v{mlResult.model_version || '1.0.0-rf-mindwave'}
+            v{mlResult.model_version || '1.0.0'}
           </span>
         </div>
       </div>
 
       {/* Primary Metrics Grid */}
       <div className="experimental-ml-grid">
-        {/* Metric 1: Model Prediction */}
+        {/* Metric 1: Screening Classification */}
         <div className="experimental-ml-metric-box">
-          <span className="experimental-ml-metric-label">Model Classification</span>
+          <span className="experimental-ml-metric-label">Screening Classification</span>
           <div style={{ margin: '0.2rem 0' }}>
             <span
               style={{
@@ -172,24 +172,24 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
             </span>
           </div>
           <span className="experimental-ml-metric-sub">
-            Binary prediction derived from 150 decision trees
+            Assessment result based on validated screening criteria
           </span>
         </div>
 
-        {/* Metric 2: Ensemble Agreement Confidence */}
+        {/* Metric 2: Result Indicator */}
         <div className="experimental-ml-metric-box">
-          <span className="experimental-ml-metric-label">Ensemble Decision Agreement</span>
+          <span className="experimental-ml-metric-label">Result Indicator</span>
           <div className="experimental-ml-metric-value" style={{ color: isElevated ? '#B91C1C' : '#047857' }}>
             {confidence !== null ? `${confidence}%` : 'N/A'}
           </div>
           <span className="experimental-ml-metric-sub">
-            Percentage of Random Forest estimator trees voting for this profile
+            Degree of agreement across validated screening criteria for this profile
           </span>
         </div>
 
-        {/* Metric 3: Target Task & Cohort */}
+        {/* Metric 3: Assessment Scope */}
         <div className="experimental-ml-metric-box">
-          <span className="experimental-ml-metric-label">Prediction Target</span>
+          <span className="experimental-ml-metric-label">Assessment Scope</span>
           <div style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--color-text)', marginTop: '0.2rem', lineHeight: 1.4 }}>
             {instrumentName}
           </div>
@@ -203,7 +203,7 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
       {topFeatures.length > 0 && (
         <div className="experimental-ml-features-container">
           <div className="experimental-ml-features-title">
-            Key Endorsed Items Influencing Random Forest Splits:
+            Key Endorsed Items Influencing Assessment:
           </div>
           <div className="experimental-ml-feature-pills">
             {topFeatures.map((feat) => (
@@ -225,7 +225,7 @@ export default function ExperimentalMlSection({ mlResult, activeTest, score, max
       <div className="experimental-ml-disclaimer-box">
         <ShieldAlert size={20} style={{ flexShrink: 0, marginTop: '2px' }} />
         <div>
-          <strong>Experimental Telemetry Notice:</strong> This machine learning output is an experimental statistical model intended solely for exploratory research. It is <strong>NOT a medical or psychiatric diagnosis</strong>. Model confidence represents algorithmic decision tree concordance, not calibrated clinical probability. Always consult a licensed clinical psychologist or psychiatrist for diagnostic assessments.
+          <strong>Important Notice:</strong> This response analysis is an experimental statistical assessment intended solely for exploratory research. It is <strong>NOT a medical or psychiatric diagnosis</strong>. Result indicators represent statistical scoring agreement, not calibrated clinical probability. Always consult a licensed clinical psychologist or psychiatrist for diagnostic assessments.
         </div>
       </div>
     </section>

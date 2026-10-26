@@ -59,7 +59,7 @@ export default function ResultPage({ onNavigate }) {
     setExpandedSection(prev => (prev === sectionId ? null : sectionId));
   };
 
-  // Experimental Random Forest ML State
+  // Screening Assessment State
   const [mlResult, setMlResult] = useState(() => latestResult?.ml_prediction || null);
   const [mlLoading, setMlLoading] = useState(false);
 
@@ -88,7 +88,7 @@ export default function ResultPage({ onNavigate }) {
       setMlResult({
         status: 'offline',
         is_supported: false,
-        unsupported_reason: 'ML analysis is currently unavailable for this questionnaire or age group.'
+        unsupported_reason: 'Screening assessment is currently unavailable for this questionnaire or age group.'
       });
     } finally {
       setMlLoading(false);
@@ -313,7 +313,7 @@ export default function ResultPage({ onNavigate }) {
         </section>
       )}
 
-      {/* ── EXPERIMENTAL ML ANALYSIS (Random Forest Telemetry) ── */}
+      {/* ── SUPPLEMENTAL SCREENING ANALYSIS ── */}
       <ExperimentalMlSection
         mlResult={mlResult}
         activeTest={testType}

@@ -213,7 +213,7 @@ export function ScreeningProvider({ children }) {
 
     const todayStr = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
 
-    // Experimental Random Forest ML prediction
+    // Supplemental screening assessment
     let mlPrediction = null;
     try {
       mlPrediction = await fetchMlPrediction({
@@ -226,7 +226,7 @@ export function ScreeningProvider({ children }) {
       mlPrediction = {
         status: 'offline',
         is_supported: false,
-        unsupported_reason: 'ML analysis is currently unavailable for this questionnaire or age group.'
+        unsupported_reason: 'Screening assessment is currently unavailable for this questionnaire or age group.'
       };
     }
 

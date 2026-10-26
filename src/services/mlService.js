@@ -43,7 +43,7 @@ export async function fetchMlPrediction({ assessmentType, ageGroup, profession, 
     return {
       status: 'error',
       is_supported: false,
-      unsupported_reason: errData.detail || 'ML prediction service returned an unexpected error response.',
+      unsupported_reason: errData.detail || 'Screening assessment service returned an unexpected error response.',
       assessment_type: assessmentType,
       algorithm: 'RandomForestClassifier'
     };
@@ -51,7 +51,7 @@ export async function fetchMlPrediction({ assessmentType, ageGroup, profession, 
     return {
       status: 'offline',
       is_supported: false,
-      unsupported_reason: 'ML analysis is currently unavailable (service at localhost:8000 is not reachable).',
+      unsupported_reason: 'Screening assessment is currently unavailable (service is not reachable).',
       assessment_type: assessmentType,
       algorithm: 'RandomForestClassifier'
     };
